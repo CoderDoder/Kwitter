@@ -1,12 +1,24 @@
-const firebaseConfig = {
-    apiKey: "AIzaSyBi2vmDaOpf1e0HKM1ueJLN2Wykxn8XuT4",
-    authDomain: "kwitter-fc076.firebaseapp.com",
-    databaseURL: "https://kwitter-fc076-default-rtdb.firebaseio.com",
-    projectId: "kwitter-fc076",
-    storageBucket: "kwitter-fc076.appspot.com",
-    messagingSenderId: "428899441291",
-    appId: "1:428899441291:web:9e72ac738a0b40d2acd28e"
-  };
+var firebaseConfig = {
+  apiKey: "AIzaSyCqKO38iZBBlBGrCGAqGMkX2QTu8i-Hw6Y",
+  authDomain: "kwitter-by-ansuman.firebaseapp.com",
+  projectId: "kwitter-by-ansuman",
+  storageBucket: "kwitter-by-ansuman.appspot.com",
+  messagingSenderId: "262893859174",
+  appId: "1:262893859174:web:0394a9007ddba9f40958a7"
+};
+
+// Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  var username=localStorage.getItem("username");
+  document.getElementById("user_name").innerHTML="Welcome "+username+"!";
+
+  function addroom(){
+    room_name=document.getElementById("roomname_input").value;
+    firebase.database().ref("/").child(room_name).update({
+      purpose:"adding roomname"
+    });
+    localStorage.setItem("roomname",room_name);
+    window.location="room_page.html";
   
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
+  }

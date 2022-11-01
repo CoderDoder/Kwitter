@@ -6,6 +6,7 @@
 .child1,.child2{
     width: 50%;
     display: inline-block;
+    height:100%
 
 }
 .child1{
@@ -38,7 +39,7 @@
 
 #box{
     background-color: rgba(255, 255, 255, 0.721);
-    width: 400px;
+    width: 450px;
     height: 500px;
     border-radius: 50px;
     box-shadow: inset 0px 1px 14px 0px ;
